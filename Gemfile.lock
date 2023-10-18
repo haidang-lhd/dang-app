@@ -151,6 +151,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (3.0.8)
+    rack-protection (3.0.6)
+      rack
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -204,6 +206,11 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sidekiq (6.0.4)
+      connection_pool (>= 2.2.2)
+      rack (>= 2.0.0)
+      rack-protection (>= 2.0.0)
+      redis (>= 4.1.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -251,6 +258,7 @@ DEPENDENCIES
   rails (~> 7.1.1)
   redis (>= 4.0.1)
   selenium-webdriver
+  sidekiq (~> 6.0.0)
   sprockets-rails
   stimulus-rails
   turbo-rails
