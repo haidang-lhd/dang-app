@@ -39,8 +39,8 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - .:/app
-      - gem_cache:/usr/local/bundle/gems
+      - .:/rails
+#      - gem_cache:/usr/local/bundle/gems
       - node_modules:/app/node_modules
     env_file: .env
     environment:
@@ -49,6 +49,6 @@ services:
 
 volumes:
   redis:
-  gem_cache:
+#  gem_cache:
   db_data:
   node_modules:     

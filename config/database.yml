@@ -11,18 +11,35 @@ default: &default
 
 development:
   <<: *default
-  # adapter: postgresql
-  # encoding: unicode
-  # database: dang_app_development
-  # username: menustreams
-  # password: Haidang_06092000
-  # port: 5432
-  # host: localhost
-  # pool: 5
-  # timeout: 5000
+#   adapter: postgresql
+#   encoding: unicode
+#   database: dang_app_development
+#   username: dangle
+#   password: Haidang_06092000
+#   port: 5433
+#   host: localhost
+#   pool: 5
+#   timeout: 5000
 
 test:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV['DATABASE_TEST_NAME'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  port: <%= ENV['DATABASE_PORT'] || '5432' %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+#   adapter: postgresql
+#   encoding: unicode
+#   database: dang_app_test
+#   username: dangle
+#   password: Haidang_06092000
+#   port: 5433
+#   host: localhost
+#   pool: 5
+#   timeout: 5000
 
 production:
   <<: *default

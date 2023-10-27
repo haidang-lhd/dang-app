@@ -48,6 +48,16 @@ gem 'sidekiq', '~>6.0.0'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem 'rspec', '~> 3.12'
+  gem 'rspec-rails', '~> 5.0.0'
+  gem 'factory_bot_rails', '~> 6.2.0'
+  gem 'faker', '~> 2.18.0'
+  gem 'shoulda-matchers', '~> 5.0'
+  gem 'database_cleaner', '~> 2.0'
+  gem 'simplecov', '~> 0.21.2', require: false
+  gem 'rubocop', '~> 1.18', require: false
+  gem 'pry-rails', :group => :development
+  gem 'pry-nav'
 end
 
 group :development do
