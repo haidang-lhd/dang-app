@@ -21,6 +21,15 @@ RSpec.describe Client, type: :model do
     end
   end
 
+  describe 'callbacks' do
+    it 'calls #set_full_name before validation' do
+      client = build(:client, first_name: 'John', last_name: 'Doe')
+      expect(client).to receive(:set_full_name)
+      expect(client).to be_valid
+      expect(client.full_name).to eq('John Doe')
+    end
+  end
+
   describe 'methods' do
     it 'full_name' do
       client = build(:client, first_name: 'John', last_name: 'Doe')
