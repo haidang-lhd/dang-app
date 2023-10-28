@@ -1,5 +1,5 @@
 json.success true
-if @duplicate_mails
+if @duplicate_mails.present?
   json.duplicate_mail @duplicate_mails do |mail, clients|
     json.mail mail
     json.clients clients do |client|

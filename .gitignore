@@ -36,3 +36,4 @@
 .env
 .idea
 Gemfile.lock
+coverage

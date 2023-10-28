@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_clients_object
-  def index
+  def filter_clients
     @clients = ClientSearcher.call(client_params, @client_data)
 
     render 'index'
@@ -15,11 +16,14 @@ class ClientsController < ApplicationController
   private
 
   def set_clients_object
-    @client_data = if request.body.read.blank?
+    @client_data = if params[:_json].blank? # request.body.read.blank?
                     JSON.parse(File.read('app/assets/clients.json'))
-                  else
-                    JSON.parse(request.body.read)
-                  end
+                   else
+                     params[:_json]
+                     # JSON.parse(request.body.read)
+                   end
+  rescue standardError => e
+    render json: { error: e.message }, status: :unprocessable_entity
   end
 
   def client_params

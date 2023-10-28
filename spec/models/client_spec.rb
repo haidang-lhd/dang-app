@@ -19,6 +19,12 @@ RSpec.describe Client, type: :model do
       expect(client).not_to be_valid
       expect(client.errors.messages[:email]).to include("can't be blank")
     end
+
+    it 'validates presence of secondary_id' do
+      client = build(:client, secondary_id: nil)
+      expect(client).not_to be_valid
+      expect(client.errors.messages[:secondary_id]).to include("can't be blank")
+    end
   end
 
   describe 'callbacks' do
