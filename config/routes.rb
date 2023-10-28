@@ -10,4 +10,16 @@ Rails.application.routes.draw do
 
   # require 'sidekiq/web'
   # mount Sidekiq::Web => '/sidekiq'
+
+  # client routes
+#  namespace :clients
+#   get '/clients', to: 'clients#index'
+#   get '/clients/check_duplicate_mail', to: 'clients#check_duplicate_mail'
+
+  resources :clients, only: [] do
+    collection do
+      post :filter_clients
+      post :check_duplicate_mail
+    end
+  end
 end
