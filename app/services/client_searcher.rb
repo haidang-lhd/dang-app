@@ -40,6 +40,6 @@ class ClientSearcher
       client = Client.find_or_create_by(first_name: first_name, last_name: last_name, email: client['email'], full_name: client['full_name'], secondary_id: client['id'])
       client_ids << client[:id]
     end
-    @clients = Client.where(id: client_ids)
+    Client.where(id: client_ids)
   end
 end
