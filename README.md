@@ -30,7 +30,8 @@ docker compose exec app bundle exec rails db:migrate
 ````
 
 
-# At this point, the app has been run successfully `http://localhost:3000/`
+# At this point, the app has been run successfully at
+`http://localhost:3000/`
 
 
 # Make an example request with [postman collection](https://lehaidang-lhd.postman.co/workspace/My-Workspace~12c7ad87-7855-42ba-8474-1c9810864aab/collection/16969059-b50a5ea2-7cd8-4f84-a50a-d92a167eb7b0?action=share&creator=16969059)
