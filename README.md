@@ -36,6 +36,12 @@ docker compose exec app bundle exec rails db:migrate
 
 # Make an example request with [postman collection](https://lehaidang-lhd.postman.co/workspace/My-Workspace~12c7ad87-7855-42ba-8474-1c9810864aab/collection/16969059-b50a5ea2-7cd8-4f84-a50a-d92a167eb7b0?action=share&creator=16969059)
 
+## Search through all clients and return those with names partially matching a given search query with endpoint `filter_clients`
+<p>Accepted params: `fullname, email, id` </p>
+<p>The json file content can be sent in the body with json format </p>
+
+## Find out if there are any clients with the same email in the dataset, and show those duplicates if any are found with endpoint `check_duplicate_mail`
+<p>The json file content can be sent in the body with json format </p>
 
 # Run unit test
 
