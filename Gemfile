@@ -40,7 +40,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
-gem 'sidekiq', '~>6.0.0'
+gem 'sidekiq', '~> 6.2', '>= 6.2.2'
 
 gem 'ransack', github: 'activerecord-hackery/ransack'
 

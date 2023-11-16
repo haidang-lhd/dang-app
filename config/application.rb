@@ -25,5 +25,7 @@ module DangApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.cache_store = :redis_cache_store, { url: ENV.fetch("REDIS_URL_SIDEKIQ", "redis://localhost:6379/0") }
+    config.action_controller.perform_caching = true
   end
 end

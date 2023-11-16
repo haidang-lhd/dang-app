@@ -78,4 +78,5 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
 
   config.hosts << /[a-z0-9]+\.c9users\.io/
+  config.web_console.whitelisted_ips = '172.22.0.1', '172.22.0.5', '10.0.2.2', '127.0.0.0', '127.255.255.255', '::1'
 end
