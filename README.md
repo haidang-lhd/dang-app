@@ -14,7 +14,7 @@ DATABASE_TEST_NAME=dang_app_test
 DATABASE_USER=dangle
 DATABASE_PASSWORD=Haidang_06092000
 DATABASE_HOST=database
-REDIS_HOST=redis`
+REDIS_HOST=redis
 ````
 
 # Run app with docker
