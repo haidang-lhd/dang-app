@@ -30,3 +30,12 @@ docker compose exec app bundle exec rails db:migrate
 
 # At this point, the app has been run successfully at
 `http://localhost:3000/`
+
+# Run unit test
+
+`docker compose exec app bundle exec rspec spec`
+
+
+# Check covered test
+
+`open coverage/index.html`
