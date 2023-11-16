@@ -18,6 +18,8 @@ REDIS_HOST=redis
 ````
 
 # Run app with docker
+`chmod +x ./entrypoints/docker-entrypoint.sh`
+
 `docker-compose up --build`
 
 
