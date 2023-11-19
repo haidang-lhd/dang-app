@@ -18,6 +18,9 @@ REDIS_HOST=redis
 ````
 
 # Run app with docker
+`chmod +x init.sql`
+`chmod +x entrypoints/docker-entrypoint.sh`
+`chmod +x entrypoints/sidekiq-entrypoint.sh`
 `docker-compose up --build`
 
 
@@ -32,8 +35,7 @@ docker compose exec app bundle exec rails db:migrate
 `http://localhost:3000/`
 
 # Run unit test
-
-`docker compose exec app bundle exec rspec spec`
+`docker-compose exec app bundle exec rspec spec`
 
 
 # Check covered test
